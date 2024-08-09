@@ -1,0 +1,7 @@
+SMBIOSBIOSVersion
+Manufacturer
+Name
+SerialNumber
+Version
+
+Get-WmiObject win32_bios
