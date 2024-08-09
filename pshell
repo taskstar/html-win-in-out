@@ -1,7 +1,30 @@
-SMBIOSBIOSVersion
-Manufacturer
-Name
-SerialNumber
-Version
-
 Get-WmiObject win32_bios
+# SMBIOSBIOSVersion
+# Manufacturer
+# Name
+# SerialNumber
+# Version
+
+
+Get-CimInstance -Class Win32_BIOS
+# SMBIOSBIOSVersion
+
+
+
+Get-WmiObject -Class Win32_BIOS | Format-List *
+
+
+
+Get-WmiObject -Class Win32_BIOS | Select SMBIOSBIOSVersion, Manufacturer, SerialNumber, ReleaseDate
+
+
+
+
+
+# You can also get BIOS information from a remote computer:
+Get-WmiObject -Class Win32_BIOS -ComputerName MUN-WKS41
+
+
+
+# registry using PowerShell:
+Get-ItemProperty -Path HKLM:\HARDWARE\DESCRIPTION\System\BIOS
